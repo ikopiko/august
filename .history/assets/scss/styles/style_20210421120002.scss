@@ -8582,10 +8582,6 @@ Cart Area CSS
     background-color: #161e17;
     color: #ffffff !important;
     text-transform: none !important;
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    font-family: $font-play;
 }
 
 
@@ -10258,13 +10254,8 @@ a.price
 {
     border-radius: 10px;
     background-color: #f6f6f6;
-    margin:0 10px;
 }
 .webertela tr th
 {
     height: 80px;
-}
-.webertela  td
-{
-    height: 20px !important;
 }

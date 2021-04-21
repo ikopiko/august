@@ -4,14 +4,14 @@
     <div class="container">
         <form>
             <div class="row ">
-                <div class="col-8 backgroundGray">
+                <div class="col-9 backgroundGray">
                     <div class="cart-table table-responsive">
                         <table class="table table-bordered webertela">
                             <thead>
                                 <tr>
                                     <th>&nbsp;</th>
                                     <th scope="col">Product</th>
-                                    <th scope="col">&nbsp;</th>
+                                    <th scope="col"></th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Comment</th>
                                     <!-- <th scope="col">Unit Price</th> -->
@@ -75,8 +75,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-3 backgroundGray short">
-                    <div class="racxa">
+                <div class="col-3 backgroundGray short offset-1">
                     <div class="cart-table table-responsive">
                         <table class="table table-bordered webertela">
                             <thead>
@@ -92,7 +91,7 @@
                             </tbody>
                         </table>
                     </div>
-</div>
+
                 </div>
 
             </div>

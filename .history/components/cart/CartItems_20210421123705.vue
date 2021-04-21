@@ -11,7 +11,7 @@
                                 <tr>
                                     <th>&nbsp;</th>
                                     <th scope="col">Product</th>
-                                    <th scope="col">&nbsp;</th>
+                                    <th scope="col"></th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Comment</th>
                                     <!-- <th scope="col">Unit Price</th> -->

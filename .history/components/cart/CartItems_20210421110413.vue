@@ -4,14 +4,14 @@
     <div class="container">
         <form>
             <div class="row ">
-                <div class="col-8 backgroundGray">
+                <div class="col-sm-12 col-md-9 backgroundGray">
                     <div class="cart-table table-responsive">
                         <table class="table table-bordered webertela">
                             <thead>
                                 <tr>
                                     <th>&nbsp;</th>
                                     <th scope="col">Product</th>
-                                    <th scope="col">&nbsp;</th>
+                                    <th scope="col"></th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Comment</th>
                                     <!-- <th scope="col">Unit Price</th> -->
@@ -75,24 +75,34 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-3 backgroundGray short">
-                    <div class="racxa">
-                    <div class="cart-table table-responsive">
-                        <table class="table table-bordered webertela">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Details</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Full price <span style="float:right"><b>${{parseFloat(cartTotal + 10).toFixed(2)}}</b></span></td>
-                                </tr>
-                                <nuxt-link to="/checkout" class="btn btn-checkout">Buy</nuxt-link>
-                            </tbody>
-                        </table>
+                <div class="col-sm-12 col-md-3 backgroundGray">
+                     <div class="cart-table table-responsive">
+                    <table class="table table-bordered webertela">
+                        <thead>
+                            <tr>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Subtotal <span>${{cartTotal}}</span></td>
+                            </tr>
+                            <tr>
+                                <td>Shipping <span>$10.00</span></td>
+                                <td>Total <span><b>${{parseFloat(cartTotal + 10).toFixed(2)}}</b></span></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     </div>
-</div>
+                    <div class="cart-totals">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <nuxt-link to="/checkout" class="btn btn-light">Proceed to Checkout</nuxt-link>
+                    </div>
                 </div>
 
             </div>
@@ -102,10 +112,6 @@
 </section>
 <!-- End Cart Area -->
 </template>
-
-<style>
-
-</style>
 
 <script>
 export default {
