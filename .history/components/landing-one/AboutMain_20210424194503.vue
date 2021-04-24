@@ -47,6 +47,7 @@
                                                 </div>
                                             </div>
                                             <img src="../../static/img/group-94.png" class="Group-94">
+                                            div
                                             <img src="../../static/img/group-2-copy.png"  class="Group-2-Copy">
                                             <nuxt-link to="/about-full" class="Explore-More-Copy-4">Explore more</nuxt-link>
                                         </td>

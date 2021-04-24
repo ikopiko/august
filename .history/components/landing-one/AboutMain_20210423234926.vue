@@ -43,7 +43,7 @@
                                             <div class="row h-100">
                                                 <div class="col-sm-12 my-auto text-left aboutiza" style="padding-left:80px;">
                                                     <h1 class="title">About Us</h1>
-                                                    <p>Our olive oil is a celebration of the creativity of chefs and food fans the world over. We wouldn’t be here without them, so this page is all about the great work they do. In other words, these stories are about you.</p>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
                                                 </div>
                                             </div>
                                             <img src="../../static/img/group-94.png" class="Group-94">

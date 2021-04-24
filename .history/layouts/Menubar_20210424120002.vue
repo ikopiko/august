@@ -40,7 +40,7 @@
                                 <nuxt-link to="/signup">Signup</nuxt-link>
                             </div>
                             <div class="option-item userIconIza">
-                                <nuxt-link to="/login"> <i class="fas fa-user tipi"></i></nuxt-link>
+                                <nuxt-link to="/login"> <i class="fas fa-user"></i></nuxt-link>
                             </div>
                             <div class="option-item userIconIza">
                                 <a @click.prevent="toggle" href="#">
@@ -60,11 +60,6 @@
 </template>
 
 <style scoped>
-.top-header-right-nav li::before
-{
-    height: 0px;
-    background: none 
-}
 span.cartLength{
     color: #f8f8f8;
     position: relative;

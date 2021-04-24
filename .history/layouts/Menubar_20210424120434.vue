@@ -60,11 +60,6 @@
 </template>
 
 <style scoped>
-.top-header-right-nav li::before
-{
-    height: 0px;
-    background: none 
-}
 span.cartLength{
     color: #f8f8f8;
     position: relative;

@@ -40,11 +40,11 @@
                                 <nuxt-link to="/signup">Signup</nuxt-link>
                             </div>
                             <div class="option-item userIconIza">
-                                <nuxt-link to="/login"> <i class="fas fa-user tipi"></i></nuxt-link>
+                                <nuxt-link to="/login"> <i class="fas fa-user"></i></nuxt-link>
                             </div>
                             <div class="option-item userIconIza">
                                 <a @click.prevent="toggle" href="#">
-                                   <span class="cartLength"> ({{cart.length}}) </span> <i class="fas fa-shopping-bag tipi"></i>
+                                   <span> ({{cart.length}}) </span> <i class="fas fa-shopping-bag tipi"></i>
                                 </a>
                             </div>
                         </div>
@@ -60,18 +60,6 @@
 </template>
 
 <style scoped>
-.top-header-right-nav li::before
-{
-    height: 0px;
-    background: none 
-}
-span.cartLength{
-    color: #f8f8f8;
-    position: relative;
-    right: -30px;
-    top: -20px;
-    font-size: 14px;
-}
 .userIconIza 
 {
     width: 32px;

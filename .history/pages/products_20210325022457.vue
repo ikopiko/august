@@ -34,7 +34,7 @@
     <!-- End Page Title Area -->
 
     <!-- Start Collections Area -->
-    <section class="products-collections-area ptb-60">  
+    <section class="products-collections-area ptb-60">
         <div class="container">
             <div class="section-title" >
                 <span>{{ selectedCategory.name }}</span>

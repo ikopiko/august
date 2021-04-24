@@ -62,8 +62,7 @@
 <style scoped>
 .top-header-right-nav li::before
 {
-    height: 0px;
-    background: none 
+    height: 0px !important; 
 }
 span.cartLength{
     color: #f8f8f8;

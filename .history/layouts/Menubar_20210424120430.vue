@@ -60,18 +60,7 @@
 </template>
 
 <style scoped>
-.top-header-right-nav li::before
-{
-    height: 0px;
-    background: none 
-}
-span.cartLength{
-    color: #f8f8f8;
-    position: relative;
-    right: -30px;
-    top: -20px;
-    font-size: 14px;
-}
+
 .userIconIza 
 {
     width: 32px;
