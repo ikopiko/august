@@ -45,22 +45,13 @@
                                                     <h1 class="title">About Us</h1>
                                                     <p>Our olive oil is a celebration of the creativity of chefs and food fans the world over. We wouldn’t be here without them, so this page is all about the great work they do. In other words, these stories are about you.</p>
                                                 </div>
-                                                <div class="col-sm-12  text-left" style="padding: 0 0 0 80px;">
-                                                    <img src="img/group-2-copy.png" style="float:left">
-                                                    <nuxt-link to="/about-full" style="float: left;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: normal;
-    color: #f8f8f8;
-    padding: 12px 20px;">Explore more</nuxt-link>
+                                                    <div class="col-sm-12  text-left">
+                                                <img src="img/group-2-copy.png" style="float:left">
+                                                <nuxt-link to="/about-full" style="float:left">Explore more</nuxt-link>
                                                 </div>
                                             </div>
                                             <img src="img/group-94.png" class="Group-94">
-                                            >
+                                         >
                                         </td>
                                     </tr>
                                 </tbody>

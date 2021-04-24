@@ -12,7 +12,7 @@
                                         <td style="width:25%;">&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td style="width:50%">
-                                            <span class="cifraTitle">
+                                            <span class="cifraTitle" >
 
                                                 01
 
@@ -35,32 +35,22 @@
                                 <tbody>
                                     <tr>
                                         <td style="width:25%;">
-                                            <img src="img/about/about-first.jpg" class="one img-fluid">
+                                            <img src="../../assets/img/about/about-first.jpg" class="one img-fluid">
 
                                         </td>
-                                        <td><img src="img/about/about-second.jpg" class="two img-fluid"></td>
+                                        <td><img src="../../assets/img/about/about-second.jpg" class="two img-fluid"></td>
                                         <td style="width:50%" class="h-100">
                                             <div class="row h-100">
                                                 <div class="col-sm-12 my-auto text-left aboutiza" style="padding-left:80px;">
                                                     <h1 class="title">About Us</h1>
                                                     <p>Our olive oil is a celebration of the creativity of chefs and food fans the world over. We wouldn’t be here without them, so this page is all about the great work they do. In other words, these stories are about you.</p>
                                                 </div>
-                                                <div class="col-sm-12  text-left" style="padding: 0 0 0 80px;">
-                                                    <img src="img/group-2-copy.png" style="float:left">
-                                                    <nuxt-link to="/about-full" style="float: left;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: normal;
-    color: #f8f8f8;
-    padding: 12px 20px;">Explore more</nuxt-link>
-                                                </div>
                                             </div>
-                                            <img src="img/group-94.png" class="Group-94">
-                                            >
+                                            <img src="../../static/img/group-94.png" class="Group-94">
+                                            <div>
+                                            <img src="../../static/img/group-2-copy.png"  class="Group-2-Copy">
+                                            <nuxt-link to="/about-full" class="Explore-More-Copy-4">Explore more</nuxt-link>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -92,13 +82,13 @@
 
         <!-- 
         <div class="line-top">&nbsp;</div>
-
+        
         <div class="container">
             <div class="row">
-
+            
             <div class="col-md-6 col-sm-12 line-left line-right ">
                 <div class="linee ">&nbsp;</div>
-
+                
                 <div class="left">
                     <img src="../../assets/img/about/about-first.jpg" class="one img-fluid">
                     <img src="../../assets/img/about/about-second.jpg" class="two img-fluid">
@@ -109,10 +99,10 @@
                 <div class="symbolia">01</div>
                 <div class="d-table">
                                 <div class="d-table-cell width-100">
-
+                                    
                                             <h1>About Us</h1>
                                             <p>Our olive oil is a celebration of the creativity of chefs and food fans the world over. We wouldn’t be here without them, so this page is all about the great work they do. In other words, these stories are about you..</p>
-
+                                        
                                 </div>
                             </div>
             </div>
@@ -137,18 +127,17 @@
     position: absolute;
     z-index: 1;
 }
-
-.padding-none {
-    padding: 0px;
+.padding-none
+{
+    padding: 0px ;
 }
-
 .Group-94 {
-    width: 271px;
-    height: 286px;
+  width: 271px;
+  height: 286px;
 
-    object-fit: contain;
-    transform: rotate(-14deg);
-    opacity: 0.4;
+  object-fit: contain;
+  transform: rotate(-14deg);
+  opacity: 0.4;
 }
 </style>
 

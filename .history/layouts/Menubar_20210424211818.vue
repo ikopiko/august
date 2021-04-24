@@ -41,18 +41,16 @@
                             <div class="option-item ">
                                 <div class="userIconIza">
                                     <nuxt-link to="/login">
-                                        <img src="img/userIcons/shape.png" srcset="img/shape@2x.png 2x, img/shape@3x.png 3x" alt="userIcon">
+                                        <img src:"'../assets/img/userIcons/shape.png'" srcset="img/shape@2x.png 2x, img/shape@3x.png 3x" alt="userIcon">
                                         <!-- png -->
-                                        <!-- <i class="fas fa-user tipi"></i> -->
+                                        <i class="fas fa-user tipi"></i>
                                     </nuxt-link>
                                 </div>
                             </div>
                             <div class="option-item ">
-                                <div>
+                                <div class="cartIconIza">
                                     <a @click.prevent="toggle" href="#">
-                                        <span class="cartLength"> ({{cart.length}}) </span>
-                                        <img src="img/cartIcon/group-4.png" srcset="img/group-4@2x.png 2x, img/group-4@3x.png 3x" >
-                                        </i>
+                                        <span class="cartLength"> ({{cart.length}}) </span> <i class="fas fa-shopping-bag bag"></i>
                                     </a>
                                 </div>
                             </div>
@@ -104,7 +102,7 @@ span.cartLength {
 .userIconIza {
     width: 32px;
     height: 32px;
-    background-color: transparece;
+    background-color: #f8f8f8;
     font-size: 24px;
     position: relative;
     top: 5px;

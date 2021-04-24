@@ -997,12 +997,11 @@ Navbar Area CSS
 .comero-nav {
     background-color: $black-color;
     padding: {
-        // top: 4px;
-        // bottom: 4px;
+        top: 4px;
+        bottom: 4px;
     }
     .navbar {
         position: inherit;
-        height: 55px;
         padding: {
             right: 0;
             top: 0;
@@ -1342,7 +1341,7 @@ Navbar Area CSS
                 right: -12px;
                 top: 0.5px;
                 width: 1px;
-                height: 0px;
+                height: 12px;
                 background: #888888;
             }
             &:last-child {

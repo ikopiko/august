@@ -3,7 +3,7 @@
     <!-- Start Navbar Area -->
     <div :class="['navbar-area', {'is-sticky': isSticky}]">
         <div class="comero-nav">
-            <div class="container pt-0 pb-0">
+            <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
 
                     <b-navbar-toggle target="navbarSupportedContent"></b-navbar-toggle>
@@ -13,17 +13,18 @@
 
                             <li class="nav-item p-relative">
                                 <nuxt-link to="/about-full" class="nav-link">About us</nuxt-link>
-
+                    
                             </li>
 
                             <li class="nav-item p-relative">
                                 <nuxt-link to="/products" class="nav-link">Shop</nuxt-link>
-
+                            
                             </li>
 
-                            <li class="nav-item p-relative">
-                                <nuxt-link to="/blog-one" class="nav-link">Blog</nuxt-link>
+                         
 
+                            <li class="nav-item p-relative"><nuxt-link to="/blog-one" class="nav-link">Blog</nuxt-link>
+                      
                             </li>
 
                             <li class="nav-item">
@@ -38,23 +39,13 @@
                             <div class="option-item ">
                                 <nuxt-link to="/signup">Signup</nuxt-link>
                             </div>
-                            <div class="option-item ">
-                                <div class="userIconIza">
-                                    <nuxt-link to="/login">
-                                        <img src="img/userIcons/shape.png" srcset="img/shape@2x.png 2x, img/shape@3x.png 3x" alt="userIcon">
-                                        <!-- png -->
-                                        <!-- <i class="fas fa-user tipi"></i> -->
-                                    </nuxt-link>
-                                </div>
+                            <div class="option-item userIconIza">
+                                <nuxt-link to="/login"> <i class="fas fa-user tipi"></i></nuxt-link>
                             </div>
-                            <div class="option-item ">
-                                <div>
-                                    <a @click.prevent="toggle" href="#">
-                                        <span class="cartLength"> ({{cart.length}}) </span>
-                                        <img src="img/cartIcon/group-4.png" srcset="img/group-4@2x.png 2x, img/group-4@3x.png 3x" >
-                                        </i>
-                                    </a>
-                                </div>
+                            <div class="option-item cartIconIza">
+                                <a @click.prevent="toggle" href="#">
+                                   <span class="cartLength"> ({{cart.length}}) </span> <i class="fas fa-shopping-bag tipi"></i>
+                                </a>
                             </div>
                         </div>
                     </b-collapse>
@@ -69,58 +60,59 @@
 </template>
 
 <style scoped>
-.top-header-right-nav li::before {
+.top-header-right-nav li::before
+{
     height: 0px;
-    background: none
+    background: none 
 }
-
-span.cartLength {
+span.cartLength{
     color: #f8f8f8;
     position: relative;
     right: -30px;
     top: -20px;
     font-size: 14px;
 }
-
-.cartIconIza {
+.cartIconIza 
+{
     width: 32px;
     height: 32px;
     background-color: #f8f8f8;
     font-size: 24px;
     position: relative;
-    bottom: 4px;
-    color: black;
-    border-radius: 50%;
-}
-
-.cartIconIza .bag {
-    width: 100%;
-    position: absolute;
-    left: 6px;
-    color: black;
-    top: 3px;
-}
-
-.userIconIza {
-    width: 32px;
-    height: 32px;
-    background-color: transparece;
-    font-size: 24px;
-    position: relative;
-    top: 5px;
     margin: 0 auto;
     color: black;
+    top:0px;
     border-radius: 50%;
 }
-
-.userIconIza .tipi {
+.userIconIza .bag
+{
     width: 100%;
     position: absolute;
     left: 6px;
     color: black;
     top: 3px;
 }
-
+.userIconIza 
+{
+    width: 32px;
+    height: 32px;
+    /* margin: 0 41px 0 17px; */
+    background-color: #f8f8f8;
+    font-size: 24px;
+    position: relative;
+    margin: 0 auto;
+    color: black;
+    top:10px;
+    border-radius: 50%;
+}
+.userIconIza .tipi
+{
+    width: 100%;
+    position: absolute;
+    left: 6px;
+    color: black;
+    top: 3px;
+}
 ul {
     width: 84%;
     display: table;

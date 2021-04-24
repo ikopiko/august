@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                             <div class="option-item ">
-                                <div>
+                                <div class="">
                                     <a @click.prevent="toggle" href="#">
                                         <span class="cartLength"> ({{cart.length}}) </span>
                                         <img src="img/cartIcon/group-4.png" srcset="img/group-4@2x.png 2x, img/group-4@3x.png 3x" >
