@@ -8610,9 +8610,9 @@ Cart Area CSS
 
 .short
 {
-  max-width: 337px !important;
+  width: 337px;
   height: 272px;
-  padding: 27px 25px;
+  padding: 27px 0 0;
   border-radius: 10px;
   background-color: #f6f6f6;
 }
@@ -8665,7 +8665,6 @@ Checkout CSS
 .checkout-details 
 {
     padding-top: 0px !important;
-    width: 1070px;
     .title{
         font-family: $font-play;
   font-size: 20px;
@@ -8685,7 +8684,15 @@ Checkout CSS
         border-radius: 10px;
         background-color: #f6f6f6;
       }
-      
+      .short
+      {
+        max-width: 337px;
+        height: 272px;
+        margin: 43px 242px 274px 23px;
+        padding: 27px 0 0;
+        border-radius: 10px;
+        background-color: #f6f6f6
+      }
 }
 .billing-details {
     .title{

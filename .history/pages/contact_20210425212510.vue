@@ -29,8 +29,8 @@
                     </div>
                     <div class="contact-info">
                         <ul class="social">
-                            <li><a href="https://www.facebook.com/Augustbakery.ge" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.instagram.com/augustbakery.ge_/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <!-- <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fab fa-behance"></i></a></li>
                                 <li><a href="#"><i class="fab fa-skype"></i></a></li>
@@ -48,7 +48,7 @@
                                     <td style="padding-right:40px ; border-right: solid 1px #ECECEC;">
                                         <h5>{{ location.number }}</h5>
                                     </td>
-                                    <td style="padding-left:40px ; ">
+                                    <td style="padding-left:40px ; margin-bottom:90px ">
                                         <h6>{{ location.title }}</h6>
                                     </td>
 

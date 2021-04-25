@@ -37,22 +37,21 @@
                 <div class="col-8 checkout-details ">
                      <div class="rectangle">
                         <h3 class="title"> Choose Payment Method</h3>
-                       
-                     </div>
-                   <div class="row">
-                            <div class="cardButt">
-                                <span class="">
+                        <div class="row">
+                            <div class="col">
+                                <span class="cardButt">
                                     Pay by Card
                                 </span>
                             </div>
-                            <div class="cardButt">
-                                 <span class="">
+                            <div class="col">
+                                 <span class="cardButt">
                                     Pay by Cash
                                 </span>
                             </div>
                         </div>
+                     </div>
+                  
                 </div>
-
                 <div class="col-4 backgroundGray short">
                     <div class="racxa">
                     <div class="cart-table table-responsive">
@@ -86,14 +85,7 @@
 </template>
 
 <style scoped>
-.cardButt{
-width: 185px;
-  height: 60px;
-  padding: 18px 50px 21px;
-  border-radius: 10px;
-  background-color: #161e17;
-}
-  
+
 </style>
 
 <script>

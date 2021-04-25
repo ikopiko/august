@@ -32,10 +32,6 @@
   top: 401px;
   right: 0px;
 }
-.main
-{
-  position: relative
-}
 </style>
 <script>
 import Banner from '../components/diction-three/Banner';

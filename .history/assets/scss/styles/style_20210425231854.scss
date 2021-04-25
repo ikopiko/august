@@ -8610,9 +8610,9 @@ Cart Area CSS
 
 .short
 {
-  max-width: 337px !important;
+  width: 337px;
   height: 272px;
-  padding: 27px 25px;
+  padding: 27px 0 0;
   border-radius: 10px;
   background-color: #f6f6f6;
 }
@@ -8662,34 +8662,9 @@ Checkout CSS
         background-color: #f6f6f6;
     }
 }
-.checkout-details 
-{
-    padding-top: 0px !important;
-    width: 1070px;
-    .title{
-        font-family: $font-play;
-  font-size: 20px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #161e17;
-  text-transform: none !important;
-  padding: 27px 25px;
-    }
-    .rectangle {
-        width: 100%;
-        height: 81px;
-        padding-top: 0px;
-        border-radius: 10px;
-        background-color: #f6f6f6;
-      }
-      
-}
 .billing-details {
     .title{
-        font-family: $font-play;
+        font-family: PlayfairDisplay;
   font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
@@ -10357,21 +10332,22 @@ a.price
 .checkoutLeftInner {
     position: relative;
     left: 0px;
-    max-width: 929px;
+    width: 929px;
     border-radius: 10px;
     background-color: #f6f6f6;
     float: left;
-    padding: 27px 25px;
+    padding: 0 23px;
 }
 
 .checkoutRightInner {
     position: relative;
-    max-width: 459px;
+    width: 459px;
     height: auto;
     border-radius: 10px;
     background-color: #f6f6f6;
-    float: right;
-    padding: 27px 25px;
+    float: left;
+    margin-left:28px;
+    padding: 0 23px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -10381,17 +10357,10 @@ a.price
     &tr{
         border-bottom: solid 1px $black-color;
     }
-        .title{
-            font-family: $font-play;
-      font-size: 20px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: #161e17;
-      text-transform: none !important;
-        }
+    .checkoutTitle{
+        font-family: $font-play;
+        font-size: 20px;
+    }
     .order-subtotal, .order-subtotal-price, .order-shipping, .shipping-price, .total-price, .product-subtotal {
         font-family: $font-play;
         font-size: 16px; 
@@ -10416,13 +10385,7 @@ a.price
 .v-stepper--alt-labels .v-stepper__header .v-divider
 {
     margin-top: 43px !important;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-}
-
-.v-stepper--alt-labels .v-stepper__step
-{
-    flex-basis: 0px !important;
+    margin: none !important;
 }
 .shopCOntainer
 {
@@ -10621,20 +10584,13 @@ span.cartLength {
 }
 
 .stepOne{
-    
+    padding-left: 0px;
     span {
         position: relative;
         left: -15px;
     }
 }
-.stepTwo{
-    
-    .v-stepper__label {
-        text-align: center;
-    }
-}
 .stepThree{
-   
     span {
         position: relative;
         right: -20px;

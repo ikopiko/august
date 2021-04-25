@@ -29,8 +29,8 @@
                     </div>
                     <div class="contact-info">
                         <ul class="social">
-                            <li><a href="https://www.facebook.com/Augustbakery.ge" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.instagram.com/augustbakery.ge_/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <!-- <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fab fa-behance"></i></a></li>
                                 <li><a href="#"><i class="fab fa-skype"></i></a></li>

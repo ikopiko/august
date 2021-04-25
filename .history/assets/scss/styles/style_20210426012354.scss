@@ -8610,9 +8610,9 @@ Cart Area CSS
 
 .short
 {
-  max-width: 337px !important;
+  max-width: 337px;
   height: 272px;
-  padding: 27px 25px;
+  padding: 27px 0 0;
   border-radius: 10px;
   background-color: #f6f6f6;
 }
@@ -8685,7 +8685,14 @@ Checkout CSS
         border-radius: 10px;
         background-color: #f6f6f6;
       }
-      
+      .short
+      {
+        max-width: 337px !important;
+        padding: 27px 0 0;
+        border-radius: 10px;
+        background-color: #f6f6f6;
+        padding: 27px 25px;
+      }
 }
 .billing-details {
     .title{

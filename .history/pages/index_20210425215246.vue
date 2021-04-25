@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div>
     <Banner></Banner>
     <AboutMain></AboutMain>
     <News></News>
@@ -31,10 +31,6 @@
   position: fixed;
   top: 401px;
   right: 0px;
-}
-.main
-{
-  position: relative
 }
 </style>
 <script>
