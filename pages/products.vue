@@ -99,7 +99,13 @@ export default {
     },
     methods: {
         selectCategory(cat) {
-            this.selectedCategory = cat;
+
+            if(this.selectedCategory.id == cat.id){
+                this.selectedCategory = { id: -1 };
+            }
+            else {
+                this.selectedCategory = cat;
+            }
 
         }
     },

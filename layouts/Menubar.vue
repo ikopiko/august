@@ -1,5 +1,6 @@
 <template>
-<div>
+<div data-app>
+
     <!-- Start Navbar Area -->
     <div :class="['navbar-area', {'is-sticky': isSticky}]">
         <div class="comero-nav">
@@ -64,7 +65,9 @@
 
                         <div class="others-option">
                             <div class="option-item">
-                                <nuxt-link to="/login">Login</nuxt-link>
+                                <a @click="loginDialog = true">
+                                    Login
+                                </a>
                             </div>
                             <div class="option-item">
                                 <a @click.prevent="toggle" href="#">
@@ -80,16 +83,60 @@
     <!-- End Navbar Area -->
 
     <SidebarPanel></SidebarPanel>
+
+    <v-dialog
+      v-model="loginDialog"
+      max-width="600px"
+    >
+      <v-card>
+        <v-card-title>
+          <span class="headline">Login</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+            <v-row>
+            <div class="login-content">
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <v-text-field
+                            v-model="username"
+                            label="Username *"
+                            required
+                        ></v-text-field>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" v-model="password" class="form-control" placeholder="Enter your password" id="password" name="password">
+                    </div>
+
+                    <v-btn class="btn btn-primary white" @click="login()">Login</v-btn>
+
+
+                </form>
+            </div>
+            </v-row>
+          </v-container>
+          <small>*indicates required field</small>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+
 </div>
 </template>
 
 <style scoped>
 
-
 ul {
     width: 84%;
     display: table;
     table-layout: fixed;
+}
+
+.white {
+    color: aliceblue;
 }
 
 ul>li {
@@ -103,6 +150,7 @@ ul>li>a {
 </style>
 
 <script>
+import axios from 'axios';
 import SidebarPanel from '../layouts/SidebarPanel';
 import {
     mutations
@@ -113,7 +161,10 @@ export default {
     },
     data() {
         return {
-            isSticky: false
+            isSticky: false,
+            loginDialog: false,
+            username: null,
+            password: null,
         }
     },
     mounted() {
@@ -142,7 +193,35 @@ export default {
         //re-route to the current page but with the selected language in a query string
         // this.$router.push({ path: `${this.$router.currentRoute.path}` })
         this.$router.go();
-        }
+        },
+
+        login(){
+
+            var bodyFormData=new FormData();
+            
+            bodyFormData.set("username", this.username);
+            bodyFormData.set("password", this.password);
+
+            axios.request( {
+                    method: "post",
+                    url: "http://august.webertela.online/rest/web/index.php?r=auth",
+                    data: bodyFormData,
+                }
+
+            ) .then((response)=> {
+                
+                console.log('Auth Response: ', response);
+
+                if(response.data.is_error){
+                    alert('Wrong username or password');
+                }
+                else {
+                    this.$store.commit('SET_USER', response.data.data)
+                    this.loginDialog = false;
+                    this.$router.push('/');
+                }
+            });
+        },
     }
 }
 </script>

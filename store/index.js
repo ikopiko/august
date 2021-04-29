@@ -6,7 +6,8 @@ const state = () => ( {
     totalQuantity: 0,
     orders: [],
     locales: ['en', 'ka'],
-    locale: 'ka'
+    locale: 'ka',
+    loggedUser: {},
 });
 
 export const plugins = [createPersistedState];
@@ -30,6 +31,9 @@ const mutations = {
         if (state.locales.indexOf(locale) !== -1) {
           state.locale = locale
         }
+    },
+    'SET_USER'(state, user) {
+        state.loggedUser = user
     },
     'GET_ORDER'(state, payload){
         state.orders = payload
