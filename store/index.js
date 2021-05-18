@@ -4,10 +4,12 @@ const state = () => ( {
     cart: [],
     totalAmount: 0,
     totalQuantity: 0,
+    totalFee: 0,
     orders: [],
     locales: ['en', 'ka'],
     locale: 'ka',
     loggedUser: {},
+    isAuthentificated: false,
 });
 
 export const plugins = [createPersistedState];
@@ -35,6 +37,15 @@ const mutations = {
     'SET_USER'(state, user) {
         state.loggedUser = user
     },
+    'AUTH_USER'(state, user) {
+        console.log('AUTH USER', user);
+        state.isAuthentificated = true;
+    },
+    'LOGOUT_USER'(state, user){
+        console.log('LOGOUT USER', user);
+        state.isAuthentificated = false;
+        state.loggedUser = {};
+    },
     'GET_ORDER'(state, payload){
         state.orders = payload
     },
@@ -47,6 +58,9 @@ const mutations = {
         state.cart = [...state.cart, ...payload]
         state.totalAmount = totals(state.cart).amount
         state.totalQuantity = totals(state.cart).qty
+    },
+    'FEE_TO_TOTAL'(state, payload){
+        state.totalFee = payload;
     },
     'DELETE_CART'(state, id){
         const currentCartToDelete = state.cart
@@ -83,6 +97,11 @@ const actions = {
 
     addToCart({ commit }, payload){
         commit('ADD_TO_CART', payload)
+    },
+
+
+    feeAmount({ commit }, payload) {
+        commit
     },
 
     deleteCart({ commit }, id){
@@ -123,6 +142,9 @@ const getters = {
     },
     totalQuantity(state){
         return state.totalQuantity
+    },
+    totalFee(state){
+        return state.totalFee
     },
     getOrders(state){
         return state.orders

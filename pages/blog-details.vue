@@ -44,8 +44,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 ">
-                                <div class="blog-details">
-                                    {{ news.description }}
+                                <div class="blog-details" v-html="news.description">
                                 </div>
                             </div>
                             <div class="col-md-2">&nbsp;</div>

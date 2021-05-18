@@ -3,18 +3,9 @@
 
     <!-- Start Page Title Area -->
     <div class="page-title-area">
-        <!-- <div class="container">
-            <ul>
-                <li>
-                    <nuxt-link to="/">Home</nuxt-link>
-                </li>
-                <li>All Products</li>
-            </ul>
-        </div> -->
 
         <div class="container mt-20">
             <div class="row">
-
                 <div class="col" v-for="category in allCategories" :key="category.id">
                     <div class="productsWrapper" :class="{ active : category.id == selectedCategory.id }" @click="selectCategory(category)">
                         <img :src="`http://august.webertela.online/dist/${category.img}`" class="Group-9">
@@ -29,21 +20,28 @@
                
             </div>
         </div>
-
     </div>
-    <!-- End Page Title Area -->
-
-    <!-- Start Collections Area -->
-    <section class="products-collections-area ptb-60">  
+    <section class="products-collections-area ptb-60" v-if="!selectedCategory.isSelected">
+        <div class="container" v-for="cat in allCategories" :key="cat.id">
+            <div class="row">
+            <div class="section-title" >
+                <span>{{ cat.name }}</span>
+            </div>
+            </div>
+            <div class="row">
+                <AllProducts :category="cat" :catList="allCategories"/>
+            </div>
+        </div>
+    </section>
+    <section class="products-collections-area ptb-60" v-if="selectedCategory.isSelected">
         <div class="container">
+            <div class="row">
             <div class="section-title" >
                 <span>{{ selectedCategory.name }}</span>
             </div>
-  </div>
-  <div class="container">
+            </div>
             <div class="row">
-                <!-- <Sidebar /> -->
-                <AllProducts :category="selectedCategory" />
+                <AllProducts :category="selectedCategory" :catList="allCategories"/>
             </div>
         </div>
     </section>
@@ -73,10 +71,10 @@ export default {
         return{
             allCategories: [],
             selectedCategory: { id: -1 },
+            sentCat: { id: -1 },
         }
     },
     mounted() {
-
         const TOKEN = 'RiG7zh-dadLHoih5AeXXzmEbaXvWbHPS';
         
         // var bodyFormData = new FormData();
@@ -93,20 +91,32 @@ export default {
             // data: bodyFormData,
         })
         .then((response) => {
-            console.log('Catogeries Response: ', response);
             this.allCategories = response.data;
+            console.log('response cat: ', this.allCategories);
+            var category = this.$route.params.catId
+
+            if(category){
+
+                this.sentCat = this.allCategories.find(x => {
+                    return x.id === Number(category);
+                });
+                this.selectCategory(this.sentCat);
+            }
         });
+
     },
+
+    
+
     methods: {
         selectCategory(cat) {
-
-            if(this.selectedCategory.id == cat.id){
+            if(cat.id == this.selectedCategory.id){
                 this.selectedCategory = { id: -1 };
             }
             else {
                 this.selectedCategory = cat;
+                this.selectedCategory.isSelected = true;
             }
-
         }
     },
 }

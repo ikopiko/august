@@ -17,7 +17,7 @@
                             <v-expansion-panel v-for="faq in allFAQ" :key="faq">
                                 <v-expansion-panel-header><h2>{{ faq.title }}</h2></v-expansion-panel-header>
                                 <v-expansion-panel-content class="txt">
-                                    {{ faq.description }}
+                                    <div v-html="faq.description"></div>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
 
