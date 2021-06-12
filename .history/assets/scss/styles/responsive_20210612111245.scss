@@ -10,11 +10,11 @@ $value_six: 1920px;
 $value_seven: 1366px;
 
 @media only #{$media} and ($feature_max : $value_one) {
-    .desktopiza
+    .none
     {
         display: none;
     }
-    .mobiluriza
+    .block
     {
         display: block;
     }

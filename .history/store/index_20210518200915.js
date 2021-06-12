@@ -134,9 +134,6 @@ const getters = {
     cart(state){
         return state.cart
     },
-    getUser(state){
-        return state.loggedUser
-    },
     language(state){
         return state.locale
     },

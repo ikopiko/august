@@ -83,9 +83,7 @@
                                 
                                 <div class="option-item">
                                     <a @click.prevent="toggle" href="#">
-                                        <!-- Cart({{cart.length}}) <i class="fas fa-shopping-bag"></i> -->
-                                        <span class="cartLength"> {{cart.length}} </span>
-                                        <img src="img/cartIcon/group-4.png" srcset="img/group-4@2x.png 2x, img/group-4@3x.png 3x" >
+                                        Cart({{cart.length}}) <i class="fas fa-shopping-bag"></i>
                                     </a>
                                 </div>
                             </div>

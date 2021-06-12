@@ -23,12 +23,6 @@ $value_seven: 1366px;
         padding: 11px 23px;
         font-size: 12px;
     }
-    .navbar-collapse
-    {
-        position: absolute;
-        right: 10px;
-        top: 50px;
-    }
 
     .ptb-60 {
         padding: {
@@ -116,7 +110,6 @@ $value_seven: 1366px;
         z-index: 1;
     }
     .comero-nav {
-        background-color: #F8F8F8 ;
         .navbar {
             .navbar-nav {
                 margin-left: 0;
@@ -126,6 +119,7 @@ $value_seven: 1366px;
                 height: auto;
                 overflow-y: scroll;
                 width: 100%;
+                background-color: #131415;
                 .nav-item {
                     padding: {
                         top: 10px;

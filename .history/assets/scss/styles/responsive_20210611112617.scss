@@ -23,12 +23,6 @@ $value_seven: 1366px;
         padding: 11px 23px;
         font-size: 12px;
     }
-    .navbar-collapse
-    {
-        position: absolute;
-        right: 10px;
-        top: 50px;
-    }
 
     .ptb-60 {
         padding: {
@@ -111,29 +105,22 @@ $value_seven: 1366px;
             }
         }
     }
-    .navbar-collapse
-    {
-        z-index: 1;
-    }
     .comero-nav {
-        background-color: #F8F8F8 ;
         .navbar {
             .navbar-nav {
                 margin-left: 0;
                 border: 1px solid #ebebeb;
                 margin-top: 15px;
                 padding: 10px 20px;
-                height: auto;
+                height: 350px;
                 overflow-y: scroll;
-                width: 100%;
+                // width: 100%;
                 .nav-item {
                     padding: {
                         top: 10px;
                         bottom: 10px;
-                        
                     };
                     a {
-                       
                         margin: {
                             left: 0;
                             right: 0;

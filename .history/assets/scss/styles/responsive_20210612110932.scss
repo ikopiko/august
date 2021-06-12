@@ -12,11 +12,11 @@ $value_seven: 1366px;
 @media only #{$media} and ($feature_max : $value_one) {
     .desktopiza
     {
-        display: none;
+        display: block;
     }
     .mobiluriza
     {
-        display: block;
+        display: none;
     }
 
     .btn {

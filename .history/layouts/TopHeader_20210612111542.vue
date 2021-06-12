@@ -1,6 +1,6 @@
 <template>
 <!-- Start Top Header Area -->
-<div class="top-header desktopiza">
+<div class="top-header none">
     <div class="container">
         <div class="row align-items-center">
 
@@ -10,7 +10,7 @@
                 </nuxt-link>
             </div>
             <div class="col-lg-10 col-md-8 ">
-                <ul class="top-header-right-nav ">
+                <ul class="top-header-right-nav">
                     <!-- <li>
                         <nuxt-link to="/login">Login</nuxt-link>
                     </li>

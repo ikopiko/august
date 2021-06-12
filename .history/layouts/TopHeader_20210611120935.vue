@@ -10,7 +10,7 @@
                 </nuxt-link>
             </div>
             <div class="col-lg-10 col-md-8 ">
-                <ul class="top-header-right-nav ">
+                <ul class="top-header-right-nav">
                     <!-- <li>
                         <nuxt-link to="/login">Login</nuxt-link>
                     </li>

@@ -83,9 +83,7 @@
                                 
                                 <div class="option-item">
                                     <a @click.prevent="toggle" href="#">
-                                        <!-- Cart({{cart.length}}) <i class="fas fa-shopping-bag"></i> -->
-                                        <span class="cartLength"> {{cart.length}} </span>
-                                        <img src="img/cartIcon/group-4.png" srcset="img/group-4@2x.png 2x, img/group-4@3x.png 3x" >
+                                        Cart({{cart.length}}) <i class="fas fa-shopping-bag"></i>
                                     </a>
                                 </div>
                             </div>
@@ -162,7 +160,6 @@ import SidebarPanel from '../layouts/SidebarPanel';
 import {
     mutations
 } from '../utils/sidebar-util';
-import store from '~/store';
 export default {
     components: {
         SidebarPanel
@@ -173,7 +170,6 @@ export default {
             loginDialog: false,
             username: null,
             password: null,
-            userLogged: false,
         }
     },
     mounted() {
@@ -189,10 +185,7 @@ export default {
     },
     computed: {
         cart() {
-            return this.$store.getters.cart;
-        },
-        loggedUser() {
-            return this.$store.getters.getUsers;
+            return this.$store.getters.cart
         }
     },
     methods: {
@@ -219,6 +212,7 @@ export default {
                     url: "http://august.webertela.online/rest/web/index.php?r=auth",
                     data: bodyFormData,
                 }
+
             ).then((response) => {
 
                 console.log('Auth Response: ', response);
@@ -226,7 +220,7 @@ export default {
                 if (response.data.is_error) {
                     alert('Wrong username or password');
                 } else {
-                    this.$store.commit('SET_USER', response.data.data);
+                    this.$store.commit('SET_USER', response.data.data)
                     this.loginDialog = false;
                     this.$router.push('/');
                 }
