@@ -4,40 +4,45 @@
                <!--    -->
 
         <div class="product-image">
-            <!-- <nuxt-link :to="`/products-details/${product.id}`"> -->
+            <nuxt-link :to="`/products-details/${product.id}`">
                 <!-- <img :src="require(`~/assets/img/uploads/store/${product.filePath}`)" @error="imageError()" /> -->
-                <img :src="`http://august.webertela.online/backend/web/images/store/${product.filePath}`" @error="imageError()" />
+                <img :src="`https://august.ge/back/backend/web/images/store/${product.filePath}`" @error="imageError()" />
                 <!-- <img :src="product.image" :alt="product.name">
                 <img :src="product.imageHover" :alt="product.name"> -->
-            <!-- </nuxt-link> -->
+            </nuxt-link>
 
             <!-- <Timer v-if="product.timePeriod" v-bind:dateTime="product.dateTime"></Timer> -->
         </div>
 
         <div class="product-content">
             <div class="row pt-30">
-                <div class="col productName">
+                <div class="col productName text-left pl-20">
                     <!-- <nuxt-link :to="`/products-details/${product.id}`" class="itemName">{{product.name}}</nuxt-link> -->
+                    <div v-if="$i18n.locale=='ka'" class="mrgvlovani">
+                    {{product.name_ge}}
+                </div>
+                <div v-else>
                     {{product.name}}
                 </div>
-                <div class="col productName">
+                </div>
+                <div class="col productName  text-right pr-20">
                     <span class="old-price" v-if="product.offer == 1">
-                        ${{ product.price - product.offerPrice }}
+                        {{ product.price - product.offerPrice }} ₾
                     </span>
                     <!-- <nuxt-link :to="`/products-details/${product.id}`" class="price">${{product.price}}</nuxt-link> -->
                     <span class="old-price" v-if="product.offer != 1">
-                        ${{ product.price }}
+                        {{ product.price }} ₾
                     </span>
                 </div>
             </div>
-            <div class="row mt-30 mb-30 pb-30">
+            <!-- <div class="row mt-30 mb-30 pb-30">
                 <div class="col-3 verticalMiddle">
                     <span class="quantity">Quantity:</span>
                 </div>
                 <div class="col-3 verticalMiddle">
                     <div class="quantityPlusMinus">
                         <div class="quantPlus" @click="addQty(product)"><a>+</a></div>
-                        <!-- <div class="quantLine">|</div> -->
+                         <div class="quantLine">|</div>
                         <div class="quantMinus" @click="minusQty(product)">-</div>
                     </div>
                 </div>
@@ -51,14 +56,20 @@
                         <a v-if="getExistPId === product.id" href="javascript:void(0)" class="btn btn-light added-btn" @click="addToCart(product)">
                             Added Already!
                         </a>
-
                         <a v-else href="javascript:void(0)" class="btn btn-light quantityBuy" @click="addToCart(product)">
                             <i class="fas fa-shopping-bag chanta"></i>
                         </a>
                     </span>
                 </div>
+            </div> -->
+            <div class=" row mt-30 mb-30 pb-30">
+                <div v-if="$i18n.locale=='ka'">
+                <div class="col-12  text-left pl-20" v-html="product.description_ge"></div>
             </div>
-
+            <div v-else>
+                <div class="col-12  text-left pl-20" v-html="product.description"></div>
+            </div>
+                </div>
         </div>
     </div>
 </div>
@@ -70,7 +81,8 @@ export default {
     components: {
         Timer
     },
-    data() {
+    data: () => {
+        lang: null
         return {
             getExistPId: null
         }
@@ -82,6 +94,7 @@ export default {
         }
     },
     mounted() {
+        this.lang = this.$i18n.locale;
     },
     methods: {
         addQty(item){

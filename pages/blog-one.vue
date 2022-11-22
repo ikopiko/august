@@ -14,26 +14,31 @@
             <div class="row">
                 <div class="col-lg-5 mb-70 blog-content">
                     <h1 class="blogTitle">
-                        <nuxt-link to="/blog-one" class="blogTitle">Blog</nuxt-link>
+                        <nuxt-link to="/blog-one" class="blogTitle mrgvlovani">{{$t('navs.blog.title')}}</nuxt-link>
                     </h1>
                 </div>
             </div>
-            <div class="row" v-for="featured in featuredNews" :key="featured.id">
-                <div class="col-lg-5">
-                    <img :src="`http://august.webertela.online/backend/web/images/store/${featured.filePath}`" />
+            <div class="row" v-for="featured in featuredNews" :key="featured.id">            
+                <div class="col-lg-12">
+                    <img :src="`https://august.ge/back/backend/web/images/store/${featured.filePath}`" />
                 </div>
-                <div class="col-lg-7">
-                    <div class="mt-60">
-                        <p class="futured">Feautured</p>
-                        <h1 class="blogTitle">{{ featured.title }}</h1>
-                        <p class="text">
-                            {{ featured.description }}
-                        </p>
+                <div class="col-lg-12">
+                    <div class="mt-10">
+                       
+                        <h3 class="mrgvlovani">{{ featured.title }}</h3>
+                        <div v-if="$i18n.locale=='ka'">
+                        <!-- <p class="text" v-html="featured.description_ge">
+                        </p> -->
+                        </div>
+                        <div v-else>
+                        <!-- <p class="text" v-html="featured.description">
+                        </p> -->
+                    </div>
                         <ul class="list-inline justify-content-center">
                             <li class="list-inline-item"><img src="~/assets/img/group-10.png" class="Group-10"></li>
                             <li class="list-inline-item">
                                 <router-link class="maxLink" :to="{ name: 'blog-details', params: { news: featured }}">
-                                    Explore more
+                                    {{$t('navs.more.title')}}
                                 </router-link>
                             </li>
                         </ul>
@@ -41,7 +46,6 @@
                 </div>
             </div>
         </div>
-    </section>
     </section>
 
     <section class="news-area ptb-60">
@@ -52,26 +56,26 @@
                     <div class="single-news-post">
                         <div class="news-image">
                             <!-- <nuxt-link :to="post.link"> -->
-                            <img :src="`http://august.webertela.online/backend/web/images/store/${news.filePath}`" />
+                            <img :src="`https://august.ge/back/backend/web/images/store/${news.filePath}`" />
                             <!-- </nuxt-link> -->
                         </div>
 
                         <div class="news-content text-center">
-                            <h3>
+                            <h3 class="mrgvlovani text-left">
                                 <!-- <nuxt-link :to="post.link">{{post.title}}</nuxt-link> -->
                                 {{news.title}}
                             </h3>
                             <!-- <span class="author">By <a href="#">{{post.author}}</a></span> -->
                             <!-- <p>{{post.post}}</p> -->
-                            <div>
+                            <div class="text-left">
                                 <ul class="list-inline justify-content-center">
-                                        <li class="list-inline-item"><img src="~/assets/img/group-10.png" class="Group-10"></li>
-                                        <li class="list-inline-item">
-                                            <router-link class="maxLink" :to="{ name: 'blog-details', params: { news: news }}">
-                                                Explore more
-                                            </router-link>
-                                        </li>
-                                </ul>
+                            <li class="list-inline-item"><img src="~/assets/img/group-10.png" class="Group-10"></li>
+                            <li class="list-inline-item">
+                                <router-link class="maxLink" :to="{ name: 'blog-details', params: { news }}">
+                                    {{$t('navs.more.title')}}
+                                </router-link>
+                            </li>
+                        </ul>
                             </div>
                             <div>
 
@@ -132,6 +136,7 @@ export default {
         return {
             allNews: [],
             featuredNews: {},
+            lang: '',
         }
     },
     mounted() {
@@ -145,7 +150,7 @@ export default {
         axios.request({
             method: "post",
             url:
-            "http://august.webertela.online/rest/web/index.php?r=v1/news/list",
+            "https://august.ge/back/rest/web/index.php?r=v1/news/list",
             headers: {
             Authorization: "Bearer " + TOKEN,
             },

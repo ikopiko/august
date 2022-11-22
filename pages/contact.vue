@@ -12,15 +12,16 @@
     <section class="contact-area ptb-60 augustBackground">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-lg-6 col-sm-12">
                     <div class="section-title">
                         <h1>Contact Us</h1>
                     </div>
                     <div class="contact-info">
 
                         <ul class="contact-list">
-                            <li>E-mail: <a href="Info@augustbakery.com">Info@augustbakery.com</a></li>
-                            <li>Phone: <a href="#">032 202 03 04</a></li>
+                            <li>{{$t('navs.email.title')}}: <a href="Info@augustbakery.com">Info@augustbakery.com</a></li>
+                            <li><a href="tel:+9950322020304">{{$t('navs.phone.title')}}: 032 202 03 04</a></li>
+                            <li><a href="tel:+995591820808">{{$t('navs.sales.title')}}: 591 82 08 08</a></li>
                         </ul>
                     </div>
 
@@ -30,30 +31,32 @@
                     <div class="contact-info">
                         <ul class="social">
                             <li><a href="https://www.facebook.com/Augustbakery.ge" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.instagram.com/augustbakery.ge_/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/augustbakery.ge_/" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             <!-- <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fab fa-behance"></i></a></li>
                                 <li><a href="#"><i class="fab fa-skype"></i></a></li>
                                 <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li> -->
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <!-- <li><a href="#"><i class="fab fa-youtube"></i></a></li> -->
                         </ul>
                     </div>
                 </div>
-                <div class="col-6 titleInner">
+                <div class="col-lg-6 col-sm-12 titleInner">
+                    <div class="section-title">
                         <h1 class="mb-100">Our Locations</h1>
+                    </div>
                         <table>
                             <tbody>
                         <span v-for="(location,index) in allLocation" :key="index">
                             <tr>
                                 <td class="locationNumber" style="padding-right:40px ; border-right: solid 1px #ECECEC;"><span class="locationNumber">0{{ index+1 }}</span></td>
-                                <td style="padding-left:40px ; ">{{ location.title }}</td>
+                                <td style="padding-left:40px ; "><a v-bind:href="location.keywords" target="_blank"  class="contactlink">{{ location.title }}</a></td>
                                 
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 
-                            </tr>
+                            </tr> -->
                         </span>
                     </tbody>
                         </table>
@@ -124,7 +127,7 @@ export default {
         axios.request({
             method: "post",
             url:
-            "http://august.webertela.online/rest/web/index.php?r=v1/locations/list",
+            "https://august.ge/back/rest/web/index.php?r=v1/locations/list",
             headers: {
             Authorization: "Bearer " + TOKEN,
             },
@@ -137,6 +140,8 @@ export default {
                 this.allLocation.forEach((x) => {
                     x.title_en = x.title;
                     x.title = x.title_ge;
+                    x.keywords = x.keyword_ge;
+                    x.keyword_ge = x.keywords
                 });
             } else {
                 console.log('Products Response: ', response);

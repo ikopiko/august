@@ -1,3 +1,4 @@
+import i18n from "./plugins/i18n";
 
 export default {
   mode: 'universal',
@@ -8,7 +9,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    title: 'August - backery',
+    title: 'August - bakery',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -31,7 +32,7 @@ export default {
     { src: '~/plugins/vue-toastification', ssr: false },
     { src: '~/plugins/vueperslides', ssr: false },
     { src: '~/plugins/vuex-persist', ssr: false },
-    'plugins/i18n.js'
+    // 'plugins/i18n.js'
     // { src: '~/plugins/firebase' },
   ],
   /*
@@ -48,7 +49,26 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/vuetify',
+    '@nuxtjs/i18n',
   ],
+
+
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      {
+        code: 'en',
+        name: 'English'
+      },
+      {
+        code: 'ka',
+        name: 'Georgian'
+      }
+    ],
+    vueI18n: i18n
+  },
+
+
   /*
   /*
   ** Global CSS
@@ -72,7 +92,7 @@ export default {
   router: {
     middleware: ['i18n'],
     linkActiveClass: 'active',
-    base: '/dist'
+    base: '/'
   },
   /*
   ** Build configuration
@@ -81,7 +101,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

@@ -4,20 +4,28 @@
     <section class="blog-details-area mt-90">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="blog-details">
-                        <div class="article-img">
-                            <img :src="`http://august.webertela.online/backend/web/images/store/${news.filePath}`" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row  mt-50">
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-8">
+                <div v-if="$i18n.locale=='ka'">
                     <div class="article-content">
-
-                        <h3 class="text-center title-detail mb-85">{{ news.title }}</h3>
+                        <h3 class="text-center title-detail mb-10 mrgvlovani">{{ news.title_ge }}</h3>
+                    </div>
+                </div>
+                <div v-else>
+                    <div class="article-content">
+                        <h3 class="text-center title-detail mb-10 ">{{ news.title }}</h3>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-2">&nbsp;</div>
+            </div>
+            <div class="row mb-30">
+                <div class="col-md-2">&nbsp;</div>
+                <div class="col-md-8 text-center">
+                    <div class="blog-details">
+                        <div class="article-img">
+                            <img :src="`http://august.ge/back/backend/web/images/store/${news.filePath}`" />
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-2">&nbsp;</div>
@@ -26,7 +34,7 @@
 
         <div class="container-fluid fullBg">
             <div class="row">
-                <div class="col-md-12  mt-75 mb-75">
+                <div class="col-md-12  mt-50 mb-75">
 
                     <div class="container">
                         <div class="row">
@@ -44,7 +52,13 @@
                                 </div>
                             </div>
                             <div class="col-md-8 ">
+                                <div v-if="$i18n.locale=='ka'">
+                                <div class="blog-details" v-html="news.description_ge">
+                                </div>
+                                </div>
+                                <div v-else>
                                 <div class="blog-details" v-html="news.description">
+                                </div>
                                 </div>
                             </div>
                             <div class="col-md-2">&nbsp;</div>
@@ -57,7 +71,6 @@
     </section>
 </div>
 </template>
-
 <script>
 
 export default {
@@ -65,6 +78,7 @@ export default {
     data() {
         return {
             news: {},
+            lang: '',
         }
     },
   async created () {

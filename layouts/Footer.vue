@@ -1,55 +1,39 @@
 <template>
 <footer class="footer-area">
     <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-sm-12">
-                <div class="single-footer-widget">
-                    <div class="logo">
-                        <a href="#" class="nav-link">
+        <div class="row desktopiza">
+            <div class="col-md-10 col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-light pl-0 ">
+                    <ul class="navbar-nav">
+                        <li class="nav-item p-relative" v-if="$i18n.locale == 'ka'">
+                                    <nuxt-link to="/ka/products" class="nav-link">{{$t('navs.shop.title')}}</nuxt-link>
+                                </li>
+                                <li class="nav-item p-relative" v-else>
+                                    <nuxt-link to="/products" class="nav-link">{{$t('navs.shop.title')}}</nuxt-link>
+                                </li>
 
-                            <img src="img/group-5.png" class="Combined-Shape">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-12">
-               <ul class="menu">
-                            <li class="nav-item p-relative">
-                                <nuxt-link to="/about-full" class="nav-link">{{$t('navs.about.title')}}</nuxt-link>
-                            </li>
-                            <li class="nav-item p-relative">
-                                <nuxt-link to="/products" class="nav-link">{{$t('navs.shop.title')}}</nuxt-link>
-                            </li>
-                            <li class="nav-item p-relative"><a href="#" class="nav-link">{{$t('navs.blog.title')}}</a>
-                            </li>
-                            <li class="nav-item">
-                                <nuxt-link to="/contact" class="nav-link">{{$t('navs.contact.title')}}</nuxt-link>
-                            </li>
-                            <li class="nav-item">
-                                <nuxt-link to="/faq" class="nav-link">{{$t('navs.faq.title')}}</nuxt-link>
-                            </li>
-                        </ul>
-                <ul class="menu mt-4 " style="width: 90%;">
-                            <li class="nav-item p-relative">
-                                <!-- <nuxt-link to="/contact" class="nav-link"> -->
-                                Contact
-                                <!-- </nuxt-link> -->
-                            </li>
+                                <li class="nav-item p-relative" v-if="$i18n.locale == 'ka'">
+                                    <nuxt-link to="/ka/blog-one" class="nav-link">{{$t('navs.blog.title')}}</nuxt-link>
+                                </li>
+                                <li class="nav-item p-relative" v-else>
+                                    <nuxt-link to="/blog-one" class="nav-link">{{$t('navs.blog.title')}}</nuxt-link>
+                                </li>
 
-                            <li class="nav-item p-relative">
-                               
-                                    032 202 03 04 
-                                 
-                            </li>
-                            <li class="nav-item">
-                                E-mail:
-                            </li>
-                            <li class="nav-item">
-                               
-                                Info@augustbakery.com
-                                
-                            </li>
-                        </ul>
+                                <li class="nav-item p-relative" v-if="$i18n.locale == 'ka'">
+                                    <nuxt-link to="/ka/contact" class="nav-link">{{$t('navs.contact.title')}}</nuxt-link>
+                                </li>
+                                <li class="nav-item p-relative" v-else>
+                                    <nuxt-link to="/contact" class="nav-link">{{$t('navs.contact.title')}}</nuxt-link>
+                                </li>
+
+                                <li class="nav-item p-relative" v-if="$i18n.locale == 'ka'">
+                                    <nuxt-link to="/ka/about-full" class="nav-link">{{$t('navs.about.title')}}</nuxt-link>
+                                </li>
+                                <li class="nav-item p-relative" v-else>
+                                    <nuxt-link to="/about-full" class="nav-link">{{$t('navs.about.title')}}</nuxt-link>
+                                </li>
+                    </ul>
+                </nav>
             </div>
             <div class="col-md-2 col-sm-12 Follow-Us">
                 <ul class="menu">
@@ -66,18 +50,50 @@
                             <img src="img/combined-shape-copy-2_2.png" class="socialIcons">
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">
                             <img src="img/twit/combined-shape.png" class="socialIcons">
 
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
+        <div class="row mobiluriza">
+            <div class="col-sm-12">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item p-relative" v-if="$i18n.locale == 'ka'">
+                                    <nuxt-link to="/ka/products" class="nav-link">{{$t('navs.shop.title')}}</nuxt-link>
+                                </li>
+                                <li class="nav-item p-relative" v-else>
+                                    <nuxt-link to="/products" class="nav-link">{{$t('navs.shop.title')}}</nuxt-link>
+                                </li>
 
-     
-       
+                                <li class="nav-item p-relative" v-if="$i18n.locale == 'ka'">
+                                    <nuxt-link to="/ka/blog-one" class="nav-link">{{$t('navs.blog.title')}}</nuxt-link>
+                                </li>
+                                <li class="nav-item p-relative" v-else>
+                                    <nuxt-link to="/blog-one" class="nav-link">{{$t('navs.blog.title')}}</nuxt-link>
+                                </li>
+
+                                <li class="nav-item p-relative" v-if="$i18n.locale == 'ka'">
+                                    <nuxt-link to="/ka/contact" class="nav-link">{{$t('navs.contact.title')}}</nuxt-link>
+                                </li>
+                                <li class="nav-item p-relative" v-else>
+                                    <nuxt-link to="/contact" class="nav-link">{{$t('navs.contact.title')}}</nuxt-link>
+                                </li>
+
+                                <li class="nav-item p-relative" v-if="$i18n.locale == 'ka'">
+                                    <nuxt-link to="/ka/about-full" class="nav-link">{{$t('navs.about.title')}}</nuxt-link>
+                                </li>
+                                <li class="nav-item p-relative" v-else>
+                                    <nuxt-link to="/about-full" class="nav-link">{{$t('navs.about.title')}}</nuxt-link>
+                                </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
     <div class="copyright-area">
         <div class="container">
@@ -96,7 +112,6 @@
     </div>
 </footer>
 </template>
-
 <style scoped>
 .Follow-Us {
     font-family: 'Montserrat', sans-serif !important;
@@ -143,7 +158,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff !important;
-    font-family: PlayfairDisplay;
+    font-family: mrgvlovani;
 }
 
 .copyright-area ul li a {

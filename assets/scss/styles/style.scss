@@ -62,12 +62,21 @@ Default CSS
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 @import url(//db.onlinewebfonts.com/c/9da955c8511328b8b914cf9163add256?family=canela);
 @import url('http://fonts.cdnfonts.com/css/helveticaneue-2');
+@font-face {
+    font-family: 'mrgvlovani';
+    src: url('../fonts/mrgvlovani/BPGMrgvlovaniCaps2010.woff2') format('woff2'),
+        url('../fonts/mrgvlovani/BPGMrgvlovaniCaps2010.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 $font-figaro: 'FiraGO', serif;
 $font-family: 'Montserrat', sans-serif;
 $font-play: 'Playfair Display SC', serif;
 $font-canela: 'Canela, serif';
 $font-helvetica: 'HelveticaNeue', sans-serif;
+$font-mrgvlovani: 'mrgvlovani', sans-serif;
 $font-size: 16px;
 $paragraph-color: #131415;
 $black-color: #131415;
@@ -80,8 +89,8 @@ $august-131415: #131415;
 $transition: .5s;
 
 body {
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     font: {
         family: $font-family;
         font-weight: 300;
@@ -91,8 +100,12 @@ body {
             }
     background-color:$white-color;
 }
+
+.mrgvlovani{
+    font-family: $font-mrgvlovani  !important;
+}
 p {
-    color: $paragraph-color;
+    // color: $paragraph-color;
     line-height: 1.5;
     font-size: $font-size;
     margin-bottom: 15px;
@@ -108,6 +121,7 @@ a {
 
     &:hover, &:focus {
         text-decoration: none;
+        cursor: pointer;
     }
 }
 .d-table {
@@ -204,6 +218,10 @@ img {
     &.disabled, &:disabled {
         opacity: 1;
     }
+}
+.white
+{
+    color: $white-color !important;
 }
 .btn-primary {
     color: $white-color;
@@ -1024,6 +1042,11 @@ Navbar Area CSS
             padding-left: 0;
             list-style-type: none;
             margin-bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            width: 100%;
         }
         .navbar-nav {
             margin-left: 0px;
@@ -1040,7 +1063,7 @@ Navbar Area CSS
                 }
                 a {
                     font: {
-                        family: $font-canela;
+                        family: $font-mrgvlovani;
                         size: 20px;
                         weight: 300;
                         stretch: normal;
@@ -1059,7 +1082,7 @@ Navbar Area CSS
                     }
                     margin: {
                         left: 0px;
-                        right: 20px;
+                        right: 0px;
                     }
                     &:hover, &:focus, &.active {
                         color: $august-light;
@@ -1318,6 +1341,7 @@ Navbar Area CSS
             }
         }
     }
+    
     .others-option {
         margin-left: auto;
         padding-left: 0;
@@ -2085,6 +2109,7 @@ Main Banner Area CSS
 }
 .banner-image-right {
     max-width: 100%;
+    height:100%;
     float: right; 
     margin-top: 20px;
 }
@@ -2206,7 +2231,7 @@ Main Banner Area CSS
 }
 .home-slides-twoo .VueCarousel-webertela-navigation-next {
         position: absolute;
-        top: 50%;
+        top: 45%;
         color:  transparent  !important;
         right: -100px;
         outline: 0;
@@ -2220,7 +2245,7 @@ Main Banner Area CSS
 }
 .home-slides-twoo .VueCarousel-webertela-navigation-prev {
         position: absolute;
-        top: 50%;
+        top: 45%;
         color:  transparent !important;
         left: -100px;
         outline: 0;
@@ -8635,7 +8660,7 @@ Cart Area CSS
     background-color: #161e17;
     color: #ffffff !important;
     text-transform: none !important;
-    position: absolute;
+    position: initial;
     left: 0px;
     bottom: 0px;
     font-family: $font-play;
@@ -9293,6 +9318,17 @@ Footer Area CSS
     padding-top: 40px;
     position: relative;
     z-index: 1;
+    ul
+    {
+        padding-left: 0;
+    list-style-type: none;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    }
 }
 .single-footer-widget {
     .logo {
@@ -9499,7 +9535,6 @@ Go Top CSS
 
 .aboutiza h1
 {
-    font-family: $font-play;
     font-size: 50px;
     font-weight: normal;
     font-stretch: normal;
@@ -9509,19 +9544,28 @@ Go Top CSS
     color: #f8f8f8;
     text-transform: uppercase;
 }
-.aboutiza  p
+.aboutiza  
 {
-    width: 428px;
-    // height: 126px;
-    font-family: $font-family;
-    font-size: 16px;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: normal;
-    color: #f8f8f8;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-42%, -50%);
+    p
+    {
+        max-width: 450px;
+        // height: 126px;
+        font-family: $font-family;
+        font-size: 16px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.63;
+        letter-spacing: normal;
+        color: #f8f8f8;
+    }
 }
+
 
 .Group-94 {
     max-width: 271px;
@@ -9689,14 +9733,7 @@ Go Top CSS
   {
       padding: 0px;
   }
-  .desktopiza
-  {
-      display: block;
-  }
-  .mobiluriza
-  {
-      display: none;
-  }
+ 
   .mt-20
   {
       margin-top: 20px !important;
@@ -9874,7 +9911,7 @@ Go Top CSS
 
 .futured
 {
-    font-family: FiraGO;
+  font-family: FiraGO;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -9896,7 +9933,7 @@ Go Top CSS
 }
 .text
 {
-    width: 576px;
+    max-width: 100%;
     font-family: FiraGO;
     font-size: 16px;
     font-weight: 200;
@@ -10358,7 +10395,7 @@ a.price
 {
     border-radius: 10px;
     background-color: #f6f6f6;
-    margin:0 10px;
+    // margin:0 10px;
 }
 .webertela tr th
 {
@@ -10398,7 +10435,8 @@ a.price
     border-radius: 10px;
     background-color: #f6f6f6;
     float: left;
-    padding: 27px 25px;
+    padding: 27px 13px 13px 13px;
+    // margin-top: 22px;
 }
 
 .checkoutRightInner {
@@ -10696,25 +10734,29 @@ span.cartLength {
 .article-img
 {
     width: 100%;
-    height: 448px;
+    max-height: 448px;
     overflow: hidden;
 }
 .news-image
 {
-    height: 307px;
+    max-height: 307px;
     overflow: hidden;
 }
-.navbar .navbar-expand-md .navbar-light
-{
-    background-color: white;
-    position: absolute;
-    right: 10px;
-    top: 50px;
-}
+// .navbar-light .navbar-toggler-icon
+// {
+//     background-color: white;
+//     position: absolute;
+//     right: 10px;
+//     top: 50px;
+// }
 .comero-nav .navbar .navbar-nav .nav-item
 {
     float: left;
-    min-width: 200px;
+    // min-width: 150px;
+}
+.comero-nav .others-option
+{
+    text-align: right;
 }
 .desktopiza
     {
@@ -10722,6 +10764,108 @@ span.cartLength {
     }
 .mobiluriza
 {
-    display: none;
+    display: none !important;
 }
-
+.darkBg
+{
+    background-color: $august-131415;
+}
+.h-80px 
+{
+    height: 80px;
+}
+.h-100px 
+{
+    height: 100px;
+}
+.v-card
+{
+  width: 100%;
+  padding: 25px 45px 39px;
+  .headline{
+    margin: 0 8px 26px 0;
+    font-family: $font-figaro;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $august-131415;
+  }
+}
+.btn-august{
+    font-family: $font-figaro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    color:$white-color;
+    border-radius: 4px;
+}
+.btn-august-fb{
+    font-family: $font-figaro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    color:$white-color;
+    background-color: #4065b4;
+    border-radius: 4px;
+}
+.payButtonebi
+{
+    padding: 30px 10px;
+        .cardButt {
+        width: 185px;
+        height: 60px;
+        padding: 0 20px;
+        line-height: 60px;
+        border-radius: 10px;
+        background-color: #161e17;
+        color: aliceblue;
+        text-align: center;
+            float: left;   
+            margin-right: 20px;
+            span
+            {
+                height: 21px;
+  font-family: $font-figaro;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fff;
+            }
+    }
+}
+.pl-20
+{
+    padding-left: 20px !important
+}
+.pr-20
+{
+    padding-right: 20px !important
+}
+.padding
+{
+    padding: 0 12px !important;
+}
+.relative
+{
+    position: relative;
+}
+.contactlink
+{
+    color: #161E17 !important;
+    text-decoration: underline;
+    text-transform: uppercase;
+}

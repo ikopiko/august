@@ -1,9 +1,48 @@
 {
-    "navs": {
-      "about": {"title": "ჩვენს შესახებ", "link": "about"}, 
-      "shop": {"title": "მაღაზია", "link": "shop"}, 
-      "blog": {"title": "ბლოგი", "link": "blog"},
-      "contact": {"title": "კონტაქტი", "link": "contact"},
-      "faq": {"title": "FAQ", "link": "faq"}
+  "navs": {
+    "about": {
+      "title": "ჩვენ შესახებ",
+      "link": "about"
+    },
+    "shop": {
+      "title": "პროდუქცია",
+      "link": "shop"
+    },
+    "blog": {
+      "title": "ბლოგი",
+      "link": "blog"
+    },
+    "contact": {
+      "title": "კონტაქტი",
+      "link": "contact"
+    },
+    "faq": {
+      "title": "FAQ",
+      "link": "faq"
+    },
+    "more": {
+      "title": "სრულად ნახვა"
+    },
+    "locations": {
+      "title": "ჩვენი ლოკაციებია"
+    },
+    "blog": {
+      "title": "ბლოგი"
+    },
+    "futured": {
+      "title": "ამორჩეული"
+    },
+    "email": {
+      "title": "ელ. ფოსტა"
+    },
+    "phone": {
+      "title": "ტელეფონი"
+    },
+    "sales": {
+      "title": "გაყიდვების სამსახური"
+    },
+    "faqq": {
+      "title": "ხშირად დასმული შეკითხვები"
     }
   }
+}

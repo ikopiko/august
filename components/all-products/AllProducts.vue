@@ -50,7 +50,7 @@ export default {
         axios.request({
             method: "post",
             url:
-            "http://august.webertela.online/rest/web/index.php?r=v1/products/list",
+            "https://august.ge/back/rest/web/index.php?r=v1/products/list",
             headers: {
             Authorization: "Bearer " + TOKEN,
             },

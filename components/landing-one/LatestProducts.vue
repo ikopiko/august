@@ -8,15 +8,13 @@
                 </div>
 
                 <div class="row">
-
                     <ProductItem
                         v-for="(product, index) in products"
                         :product="product"
                         :key="index"
                         @clicked="toggle"
                         :className="`col-lg-3 col-md-6 col-sm-6`"
-                    ></ProductItem>
-                    
+                    ></ProductItem>                 
                 </div>
             </div>
         </section>

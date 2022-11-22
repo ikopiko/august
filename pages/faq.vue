@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="faqTitle mt-100 mb-60">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>{{$t('faqq')}}</h2>
                 </div>
                 <template>
                     <div class="faqiza">
@@ -15,12 +15,19 @@
                         <v-expansion-panels v-model="panel" :disabled="disabled" multiple>
 
                             <v-expansion-panel v-for="faq in allFAQ" :key="faq">
-                                <v-expansion-panel-header><h2>{{ faq.title }}</h2></v-expansion-panel-header>
+                                <v-expansion-panel-header>
+                                    <h2 v-if="lang == 'ka'">
+                                     {{ faq.title_ge }}
+                                    </h2>
+                                    <h2 v-else>
+                                     {{ faq.title }}
+                                    </h2>
+                                </v-expansion-panel-header>
                                 <v-expansion-panel-content class="txt">
-                                    <div v-html="faq.description"></div>
+                                    <div v-if="lang == 'ka'" v-html="faq.description_ge"></div>
+                                    <div v-else v-html="faq.description_ge"></div>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
-
                         </v-expansion-panels>
                     </div>
                 </template>
@@ -36,10 +43,12 @@ export default {
     data: () => ({
       panel: [0],
       allFAQ: [],
+      lang: null,
       disabled: false,
       readonly: false,
     }),
      mounted() {
+        this.lang = this.$i18n.locale;
         //const TOKEN = 'RiG7zh-dadLHoih5AeXXzmEbaXvWbHPS';
         
         // var bodyFormData = new FormData();
@@ -49,8 +58,7 @@ export default {
         axios.request({
             method: "post",
             url:
-            "http://august.webertela.online/rest/web/index.php?r=v1/faq/list",
-        
+            "https://august.ge/back/rest/web/index.php?r=v1/faq/list",
             // data: bodyFormData,
         })
         .then((response) => {

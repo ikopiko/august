@@ -4,10 +4,10 @@
     <AboutMain></AboutMain>
     <News></News>
     <Locations></Locations>
-    <div class="fixedSocial">
+    <!-- <div class="fixedSocial">
 
 
-    </div>
+    </div> -->
   </div>
 </template>
 <style>
@@ -21,8 +21,8 @@
   top: 401px;
   right: 0px;
 }
-.main
-{
+
+.main {
   position: relative
 }
 </style>
@@ -45,7 +45,7 @@ import Locations from '~/components/landing-one/Locations.vue';
 export default {
   components: {
     Banner, AboutMain, Offer, LatestProducts, ProductCategory, TrendingProducts,
-    BestSellers, Facility, Testimonials, News, Subscribe, Partner, InstagramPhotos,Locations
+    BestSellers, Facility, Testimonials, News, Subscribe, Partner, InstagramPhotos, Locations
   }
 }
 </script>

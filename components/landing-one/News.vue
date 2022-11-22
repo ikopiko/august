@@ -2,15 +2,25 @@
 <client-only>
     <!-- Start News Area -->
     <section class="news-area ptb-60">
-        <div class="container">
+        <div class="container padingiza">
             <div class="row" style="margin-bottom:44px">
                 <div class="col-md-6">
-                    <div class="blog-content">
-                        <h1 class="title">
-                            <nuxt-link to="/blog-one" class="titleA">Blog</nuxt-link>
+                    <div v-if="$i18n.locale=='ka'">
+                        <div class="blog-content">
+                        <h1>
+                            <nuxt-link to="/blog-one" class="titleA mrgvlovani"> {{allNewstitle.title_ge}}</nuxt-link>
                         </h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <p v-html="allNewstitle.description_ge"></p>
                     </div>
+                                                    </div>
+                                                    <div v-else>
+                                                        <h1>
+                            <nuxt-link to="/blog-one" class="titleA"> {{allNewstitle.title}}</nuxt-link>
+                        </h1>
+                        <p>{{allNewstitle.description}}</p>
+                                                    </div>
+
+                    
                 </div>
                 <div class="col md-4"></div>
                 <div class="col md-4"></div>
@@ -22,23 +32,28 @@
                             <div class="single-news-post">
                                 <div class="news-image">
                                     <!-- <nuxt-link :to="news.link">  -->
-                                    <img :src="`http://august.webertela.online/backend/web/images/store/${news.filePath}`" />
+                                    <img :src="`https://august.ge/back/backend/web/images/store/${news.filePath}`" />
                                     <!-- </nuxt-link>  -->
                                 </div>
 
                                 <div class="news-content text-center">
-                                    <h3>
+                                    <div v-if="$i18n.locale=='ka'">
+                                    <h3 class="mrgvlovani">
                                         <!-- <nuxt-link :to="post.link">{{news.title}}</nuxt-link> -->
-                                        {{news.title}}
+                                        {{news.title_ge}}
                                     </h3>
+                                </div>
+                                <div v-else>
+                                     {{news.title}}
+                                </div>
                                     <!-- <span class="author">By <a href="#">{{mews.author}}</a></span> -->
-                                    <p>{{news.post}}</p>
+                                    <!-- <p>{{news.post}}</p> -->
                                     <div>
                                         <ul class="list-inline justify-content-center">
                                             <li class="list-inline-item"><img src="img/group-10.png" class="Group-10"></li>
                                             <li class="list-inline-item" style="position: relative; bottom:20px;">
                                                 <router-link  class="maxLink" :to="{ name: 'blog-details', params: { news: news }}">
-                                                    Explore more
+                                                    {{$t('navs.more.title')}}
                                                 </router-link>
                                             </li>
                                         </ul>
@@ -50,7 +65,6 @@
                     <hooper-navigation slot="hooper-addons"></hooper-navigation>
                 </hooper>
             </div>
-
         </div>
     </section>
     <!-- End News Area -->
@@ -89,13 +103,14 @@ export default {
         return {
             hooperSettings: {
                 itemsToShow: 3,
-                keysControl: true,
+                keysControl: false,
                 autoPlay: true,
                 playSpeed: 3000,
                 transition: 300,
                 hoverPause: true,
                 centerMode: true,
-                infiniteScroll: true,
+                infiniteScroll: false,
+                wheelControl: false,
                 breakpoints: {
                     2400: {
                         itemsToShow: 4
@@ -116,11 +131,13 @@ export default {
             },
             allNews: [],
             featuredNews: {},
+            allNewstitle: {},
+            lang: null,
         }
 
     },
     mounted() {
-        const lang = this.$store.getters.language;
+        const lang =  this.$i18n.locale;;
         const TOKEN = 'RiG7zh-dadLHoih5AeXXzmEbaXvWbHPS';
         
         // var bodyFormData = new FormData();
@@ -130,7 +147,7 @@ export default {
         axios.request({
             method: "post",
             url:
-            "http://august.webertela.online/rest/web/index.php?r=v1/news/list",
+            "https://august.ge/back/rest/web/index.php?r=v1/news/list",
             headers: {
             Authorization: "Bearer " + TOKEN,
             },
@@ -155,6 +172,37 @@ export default {
                 this.featuredNews = this.allNews.filter((x) => x.feautured == '1');
                 console.log('featured: ', this.featuredNews);
             }
+        });
+        axios.request({
+            method: "post",
+            url:
+            "https://august.ge/back/rest/web/index.php?r=v1/newstitle/list",
+            headers: {
+            Authorization: "Bearer " + TOKEN,
+            },
+            // data: bodyFormData,
+        })
+        .then((response) => {
+            console.log('Products Response: ', response);
+            this.allNewstitle = response.data;
+            this.allNewstitle = this.allNewstitle[0];
+
+            
+
+            // var s = this.newstitle.description;
+
+            // var middle = Math.floor(s.length / 2);
+            // var before = s.lastIndexOf(' ', middle);
+            // var after = s.indexOf(' ', middle + 1);
+
+            // if (middle - before < after - middle) {
+            //     middle = before;
+            // } else {
+            //     middle = after;
+            // }
+
+            // this.aboutHalf1 = s.substr(0, middle);
+            // this.aboutHalf2 = s.substr(middle + 1);
         });
     },
 }

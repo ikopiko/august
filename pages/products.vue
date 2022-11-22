@@ -8,13 +8,16 @@
             <div class="row">
                 <div class="col" v-for="category in allCategories" :key="category.id">
                     <div class="productsWrapper" :class="{ active : category.id == selectedCategory.id }" @click="selectCategory(category)">
-                        <img :src="`http://august.webertela.online/dist/${category.img}`" class="Group-9">
+                        <img :src="`https://august.ge/${category.img}`" class="Group-9">
                         <div class="title">
                             {{ category.menu_count }}
                         </div>
-                        <div class="titleSmall">
-                            {{ category.name }}
+                        <div class="titleSmall"  v-if="lang == 'ka'">
+                            {{ category.name_ge }}
                         </div>
+                        <div v-else>
+                                     {{ category.name}}
+                                    </div>
                     </div>
                 </div>
                
@@ -25,7 +28,12 @@
         <div class="container" v-for="cat in allCategories" :key="cat.id">
             <div class="row">
             <div class="section-title" >
-                <span>{{ cat.name }}</span>
+                <span v-if="lang == 'ka'" class="mrgvlovani">
+                                     {{ cat.name_ge }}
+                                    </span>
+                                    <span v-else>
+                                     {{ cat.name}}
+                                    </span>
             </div>
             </div>
             <div class="row">
@@ -72,9 +80,11 @@ export default {
             allCategories: [],
             selectedCategory: { id: -1 },
             sentCat: { id: -1 },
+            lang: null,
         }
     },
     mounted() {
+        this.lang = this.$i18n.locale;
         const TOKEN = 'RiG7zh-dadLHoih5AeXXzmEbaXvWbHPS';
         
         // var bodyFormData = new FormData();
@@ -84,7 +94,7 @@ export default {
         axios.request({
             method: "post",
             url:
-            "http://august.webertela.online/rest/web/index.php?r=v1/categories/list",
+            "https://august.ge/back/rest/web/index.php?r=v1/categories/list",
             headers: {
             Authorization: "Bearer " + TOKEN,
             },

@@ -10,15 +10,149 @@ $value_six: 1920px;
 $value_seven: 1366px;
 
 @media only #{$media} and ($feature_max : $value_one) {
+    body
+    {
+        // margin-right : -12px !important;
+    }
+    .locations-bg
+    {
+        padding:0px !important
+    }
+    .mb-60
+    {
+        margin-bottom: 0px !important;
+    }
+    h1{
+        font-size: calc(2.25rem + ((1vw - 7.68px) * 1.2153)) !important;
+    }
+    h1
+    {
+        .titleA
+        {
+            font-size: calc(2.25rem + ((1vw - 7.68px) * 1.2153)) !important;
+        }
+    } 
+    .locations
+    {
+        padding: 0px !important
+    }
+    .hooper-navigation
+    {
+        top: -40px !important;
+    }
+    .padingiza
+    {
+        padding: 0 12px !important;
+    }
+    .padingizaleft-12
+    {
+        padding-left: 12px !important;
+    }
+    .card-body
+    {
+        padding: 30px 0;
+    }
+    .VueCarousel-wrapper
+    {
+        max-height: 420px;
+    }
+    .VueCarousel-pagination
+    {
+        text-align: center !important; top: -20px;
+    }
+    .VueCarousel-navigation-button {
+        display: none;
+        
+    }
+    .VueCarousel-navigation-button[data-v-453ad8cd] {
+        display: none;
+    }
+    .VueCarousel-pagination .VueCarousel-dot
+    {
+        width: 20px !important;
+    }
+    .AboutMain
+    {
+        padding-left:0px; padding-right:0px
+    }
+    .VueCarousel-pagination
+    {
+        left:0px
+    }
+    .checkoutRightInner 
+    {
+        margin: 20px 0px !important;
+    }
+    .v-stepper
+    {
+        margin: 0 10px;
+    }
+    .page-title-area {
+        padding: 0px 10px;
+    }
+    .one
+    {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: 70%;
+    }
+    .userIconIza
+    {
+        position: absolute;
+        top: -20px;
+        left: -30px;
+    }
+    .cartImage 
+    {
+        position: relative;
+        top: 0px;
+        right: 6px;
+    }
+    .item-left
+    {
+        background-image: none;
+    }
+    .mt-1oo
+    {
+        margin-top: -70px !important;
+    }
+    .banner-content 
+    {
+        
+        h1 {
+            text-align: left !important;
+        }  
+        p {
+            text-align: left !important;
+        }
+    }
+    .banner-section 
+    {
+        
+        padding: 0 20px ;
+    }
+    .container
+    {
+        padding: 0;
+        width: 100% !important;
+    }
     .desktopiza
     {
-        display: none;
+        display: none !important;
     }
     .mobiluriza
     {
-        display: block;
+        display: block !important;
     }
-
+    .navbar-toggler
+    {
+        position: absolute; right: 0px; top: -40px;
+    }
+    .menu 
+    {
+        display: block !important;
+    }
     .btn {
         padding: 11px 23px;
         font-size: 12px;
@@ -26,8 +160,10 @@ $value_seven: 1366px;
     .navbar-collapse
     {
         position: absolute;
-        right: 10px;
-        top: 50px;
+        right: 0px;
+        top: 22px;
+        height: 100vh;
+        background-color: #161E17;
     }
 
     .ptb-60 {
@@ -96,12 +232,12 @@ $value_seven: 1366px;
 
     .navbar-area {
         padding: {
-            top: 15px;
+            top: 0px;
             bottom: 15px;
         };
         .navbar-light {
             .navbar-toggler {
-                border-color: #000000;
+                border-color: none;
                 outline: 0;
                 border-radius: 0;
 
@@ -120,13 +256,15 @@ $value_seven: 1366px;
         .navbar {
             .navbar-nav {
                 margin-left: 0;
-                border: 1px solid #ebebeb;
+                // border: 1px solid #ebebeb;
                 margin-top: 15px;
                 padding: 10px 20px;
-                height: auto;
+                height: inherit;
                 overflow-y: scroll;
                 width: 100%;
                 .nav-item {
+                    width: 100%;
+                    text-align: center;
                     padding: {
                         top: 10px;
                         bottom: 10px;
@@ -814,8 +952,8 @@ $value_seven: 1366px;
         }
         .products-col-item {
             padding: {
-                left: 5px;
-                right: 5px;
+                left: 25px;
+                right: 25px;
             }
         }
         &.products-col-three {
@@ -1434,8 +1572,8 @@ $value_seven: 1366px;
     .banner-section {
         height: 100%;
         padding: {
-            top: 290px;
-            bottom: 110px;
+            top: 170px;
+            bottom: 0;
         };
     }
     .banner-content {
@@ -1463,6 +1601,7 @@ $value_seven: 1366px;
         }
     }
     .home-slides-two {
+       
         &.owl-theme {
             .owl-nav {
                 [class*=owl-] {
@@ -2357,7 +2496,8 @@ $value_seven: 1366px;
     }
     .banner-image-right
     {
-        max-width: 50%;
+        width: 700px;
+        height: 500px;
     }
     
 }
