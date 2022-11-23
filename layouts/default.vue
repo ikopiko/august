@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- <TopPanel v-if="isShowing" @clicked="onTopPanelClose"></TopPanel> -->
-    <TopHeader></TopHeader>
-    <Menubar></Menubar>
+    <TopHeader @onLocaleChange="updateLocale"></TopHeader>
+    <Menubar :locale="localeLang" :key="localeChange"></Menubar>
     <nuxt />
     <Footer></Footer>
     <SiteLoader  v-if="loading" />
@@ -24,13 +24,20 @@ export default {
   data() {
     return {
       loading: true,
-      isShowing: true
+      isShowing: true,
+      localeLang: '',
+      localeChange: 0,
     }
   },
   methods: {
     onTopPanelClose (value) {
       this.isShowing = value;
-    }
+    },
+    updateLocale(locale) {
+      // alert("UPDATEEE "+locale);
+      this.localeLang = locale;
+      this.localeChange++;
+    },
   },
   watch: {
     '$route' (pathUrl){

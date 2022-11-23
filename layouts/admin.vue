@@ -10,7 +10,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-post">
                         <div class="blog-image">
-                            <a href="#"><img src="../../assets/img/blog1.jpg" alt="image"></a>
+                            <!-- <a href="#"><img src="../../assets/img/blog1.jpg" alt="image"></a> -->
 
                             <div class="post-tag">
                                 <a href="#">Shop</a>
@@ -29,7 +29,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-post">
                         <div class="blog-image">
-                            <a href="#"><img src="../../assets/img/blog2.jpg" alt="image"></a>
+                            <!-- <a href="#"><img src="../../assets/img/blog2.jpg" alt="image"></a> -->
 
                             <div class="post-tag">
                                 <a href="#">Inspiration</a>
@@ -48,7 +48,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-post">
                         <div class="blog-image">
-                            <a href="#"><img src="../../assets/img/blog3.jpg" alt="image"></a>
+                            <!-- <a href="#"><img src="../../assets/img/blog3.jpg" alt="image"></a> -->
 
                             <div class="post-tag">
                                 <a href="#">Sell</a>

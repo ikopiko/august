@@ -5,7 +5,7 @@
         <div class="row align-items-center">
 
             <div class="col-lg-2 col-md-3">
-                <nuxt-link class="navbar-brand" to="/" v-if="storeLang == 'en'">
+                <nuxt-link class="navbar-brand" to="/" v-if="currentLang == 'en'">
                     <img src="img/logo.png" alt="logo">
                 </nuxt-link>
                 <nuxt-link class="navbar-brand" to="/ka" v-else>
@@ -30,9 +30,16 @@
                     <!-- <li>
                         <v-text-field append-icon="mdi-magnify" class="searchInner"></v-text-field>
                     </li> -->
-                    <li>
-                        <a @click="changeLang(storeLang)" style="float:left; margin-right:20px; position: relative; bottom: 2px" >{{ this.langText }}</a><i class="fas fa-chevron-right"></i>
+                    <li v-if="$i18n.locale == 'ka'">
+                        <a  @click="changeLang('en')" style="float:left; margin-right:20px; position: relative; bottom: 2px" >ENG</a><i class="fas fa-chevron-right"></i>
                     </li>
+                    <li v-else>
+                        <a @click="changeLang('ka')" style="float:left; margin-right:20px; position: relative; bottom: 2px" >ქართ</a><i class="fas fa-chevron-right"></i>
+                    </li>
+                    
+                    <!-- <div class="option-item" v-if="$i18n.locale == 'ka'">
+                        <span @click="changeLang('en')">En</span>
+                    </div> -->
                     <!-- <li>
                         <nuxt-link to="/cart">Cart</nuxt-link>
                     </li> -->
@@ -76,9 +83,11 @@ export default {
         return{
             langText: '',
             lang: '',
+            currentLang: this.$i18n.locale,
         }
     },
     mounted(){
+        this.$emit('onLocaleChange', this.currentLang)
         // alert(this.storeLang);
         if(this.storeLang == 'ka'){
             this.langText = 'ENG';
@@ -100,7 +109,19 @@ export default {
         },
     },
     methods: {
-        changeLang (val) {
+        changeLang(val) {
+            this.currentLang = val;
+            this.$i18n.setLocale(val)
+            this.$emit('onLocaleChange', val)
+            // alert(this.currentLang);
+            
+            if(val == 'en'){
+                this.$router.push('/');
+            } else {
+                this.$router.push('/ka');
+            }
+        },
+        changeLangOld (val) {
             // alert(val);
             // alert(this.$store.getters.getLang);
             if(val == 'en'){
@@ -110,10 +131,10 @@ export default {
                 this.lang = 'en';
                 this.langText = 'ქართ';
             }
-            this.$i18n.setLocale(this.lang);
-            this.$store.commit('SET_LANG', this.lang);
-            this.$forceUpdate();
-        this.$router.go();
+        this.$i18n.setLocale(this.lang);
+        this.$store.commit('SET_LANG', this.lang);
+        this.$forceUpdate();
+        // this.$router.go('/ka');
         // if(this.storeLang == 'en'){
         //     this.lang = 'en';
         //     this.$i18n.setLocale(this.lang)
