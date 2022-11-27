@@ -1,0 +1,92 @@
+<template>
+<div class="ptb-60 augustBackground">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="faqTitle mt-100 mb-60">
+                    <h2>My address</h2>
+                </div>
+                <template>
+                    <div class="faqiza">
+                        <!-- <div class="d-flex">
+                            <v-checkbox v-model="disabled" label="Disabled"></v-checkbox>
+                        </div> -->
+
+                       
+                    </div>
+        
+           
+                <div class="faqTitle mt-100 mb-60">
+                    <h2>My orders</h2>
+                </div>
+                    <div class="faqiza">
+                        <!-- <div class="d-flex">
+                            <v-checkbox v-model="disabled" label="Disabled"></v-checkbox>
+                        </div> -->
+
+                        <v-expansion-panels multiple>
+
+                            
+                            <v-expansion-panel v-for="order in allOrders" :key="order">
+                                {{ order.id }} 
+                            </v-expansion-panel>
+                            
+
+                        </v-expansion-panels>
+
+                        <v-expansion-panels
+                        multiple
+                        >
+                            <v-expansion-panel
+                                 v-for="order in allOrders"
+                                :key="order"
+                            >
+                                <v-expansion-panel-header>Header {{ order.id }}</v-expansion-panel-header>
+                                <v-expansion-panel-content>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
+                        </v-expansion-panels>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+import axios from 'axios'
+export default {
+    data: () => ({
+      panel: [0],
+      allOrders: [],
+      disabled: false,
+      readonly: false,
+    }),
+     mounted() {
+        const TOKEN = 'RiG7zh-dadLHoih5AeXXzmEbaXvWbHPS';
+        
+        // var bodyFormData = new FormData();
+        // bodyFormData.set("branch", this.branch);
+        // bodyFormData.set("status_key", this.status);
+
+        
+        axios.request({
+            method: "post",
+            url:
+            "http://august.webertela.online/rest/web/index.php?r=v1/orders/list",
+            headers: {
+            Authorization: "Bearer " + TOKEN,
+            },
+        
+            // data: bodyFormData,
+        })
+        .then((response) => {
+            
+            console.log('Orders Response: ', response);
+            this.allOrders = response.data;
+        });
+    },
+  }
+</script>

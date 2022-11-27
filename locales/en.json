@@ -1,0 +1,48 @@
+{
+  "navs": {
+    "about": {
+      "title": "About Us",
+      "link": "about"
+    },
+    "shop": {
+      "title": "Product catalog",
+      "link": "shop"
+    },
+    "blog": {
+      "title": "Blog",
+      "link": "blog"
+    },
+    "contact": {
+      "title": "Contact",
+      "link": "contact"
+    },
+    "faq": {
+      "title": "FAQ",
+      "link": "faq"
+    },
+    "more": {
+      "title": "Explore more"
+    },
+    "locations": {
+      "title": "Our Locations"
+    },
+    "blog": {
+      "title": "Blog"
+    },
+    "futured": {
+      "title": "Futured"
+    },
+    "email": {
+      "title": "E-mail"
+    },
+    "phone": {
+      "title": "Phone"
+    },
+    "sales": {
+      "title": "Sales Office"
+    },
+    "faqq": {
+      "title": "Frequently Asked Questions"
+    }
+  }
+}
