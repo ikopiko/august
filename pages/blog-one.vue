@@ -15,7 +15,8 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="mt-10">
-                        <h3 class="mrgvlovani">{{ featured.title }}</h3>
+                        <h3 class="mrgvlovani" v-if="currentLang == 'ka'">{{ featured.title_ge }}</h3>
+                        <h3 class="mrgvlovani" v-else>{{ featured.title_en }}</h3>
                         <div v-if="$i18n.locale=='ka'">
                         <!-- <p class="text" v-html="featured.description_ge">
                         </p> -->
@@ -29,9 +30,9 @@
                             <li class="list-inline-item">
 
                                 <!-- <router-link :to="{ path: 'home', params: { userId: 123 }}">Home</router-link> -->
-                                <router-link class="maxLink" :to="{ path: 'blog-details', params: { news: featured }}">
+                                <div @click="goBlog(featured)">
                                     {{$t('navs.more.title')}} 
-                                </router-link>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -53,9 +54,11 @@
                         </div>
 
                         <div class="news-content text-center">
-                            <h3 class="mrgvlovani text-left">
-                                <!-- <nuxt-link :to="post.link">{{post.title}}</nuxt-link> -->
-                                {{news.title}}
+                            <h3 class="mrgvlovani text-left" v-if="currentLang == 'ka'">
+                                {{news.title_ge}}
+                            </h3>
+                            <h3 class="mrgvlovani text-left" v-else>
+                                {{news.title_en}}
                             </h3>
                             <!-- <span class="author">By <a href="#">{{post.author}}</a></span> -->
                             <!-- <p>{{post.post}}</p> -->
@@ -63,10 +66,6 @@
                                 <ul class="list-inline justify-content-center">
                             <li class="list-inline-item"><img src="~/assets/img/group-10.png" class="Group-10"></li>
                             <li class="list-inline-item">
-                                
-                                <router-link class="maxLink" :to="{ name: 'blog-details', params: { news: 123 }}">
-                                    {{$t('navs.more.title')}}
-                                </router-link>
                                 <div @click="goBlog(news)">
                                     {{$t('navs.more.title')}}
                                 </div>
@@ -133,7 +132,13 @@ export default {
             allNews: [],
             featuredNews: {},
             lang: '',
+            currentLang: this.$i18n.locale,
         }
+    },
+    computed: {
+        singleBlog(){
+            return this.$store.getters.singleBlog;
+        },
     },
     mounted() {
         const lang = this.$store.getters.language;
@@ -174,14 +179,9 @@ export default {
         });
     },
     methods: {
-        detailNews(item){
-            console.log('Item: ',item);
-            this.$router.push({path: 'blog-details', props: { news: item }});
-        },
         goBlog(val){
-            alert('blog');
             this.$store.dispatch("addBlog", val);
-            this.router.push({ path: "blog-details" });
+            this.$router.push({ path: "blog-details"});
         },
     },
 }

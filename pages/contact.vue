@@ -49,7 +49,8 @@
                         <span v-for="(location,index) in allLocation" :key="index">
                             <tr>
                                 <td class="locationNumber" style="padding-right:40px ; border-right: solid 1px #ECECEC;"><span class="locationNumber">0{{ index+1 }}</span></td>
-                                <td style="padding-left:40px ; "><a v-bind:href="location.keywords" target="_blank"  class="contactlink">{{ location.title }}</a></td>
+                                <td v-if="currentLang == 'ka'" style="padding-left:40px ; "><a v-bind:href="location.keywords" target="_blank"  class="contactlink">{{ location.title_ge }}</a></td>
+                                <td v-else style="padding-left:40px ; "><a v-bind:href="location.keywords" target="_blank"  class="contactlink">{{ location.title_en }}</a></td>
                                 
                             </tr>
                             <!-- <tr>
@@ -118,8 +119,10 @@ export default {
     data: () => ({
       allLocation: [],
       location: {},
+      currentLang: null,
     }),
      mounted() {
+        this.currentLang = this.$i18n.locale;
         const lang = this.$store.getters.language;
         const TOKEN = 'RiG7zh-dadLHoih5AeXXzmEbaXvWbHPS';
    

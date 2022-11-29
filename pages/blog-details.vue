@@ -6,14 +6,14 @@
             <div class="row">
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-8">
-                <div v-if="$i18n.locale=='ka'">
+                <div v-if="currentLang == 'ka'">
                     <div class="article-content">
                         <h3 class="text-center title-detail mb-10 mrgvlovani">{{ news.title_ge }}</h3>
                     </div>
                 </div>
                 <div v-else>
                     <div class="article-content">
-                        <h3 class="text-center title-detail mb-10 ">{{ news.title }}</h3>
+                        <h3 class="text-center title-detail mb-10 ">{{ news.title_en }}</h3>
                     </div>
                 </div>
                 </div>
@@ -52,12 +52,12 @@
                                 </div>
                             </div>
                             <div class="col-md-8 ">
-                                <div v-if="$i18n.locale=='ka'">
+                                <div v-if="currentLange == 'ka'">
                                 <div class="blog-details" v-html="news.description_ge">
                                 </div>
                                 </div>
                                 <div v-else>
-                                <div class="blog-details" v-html="news.description">
+                                <div class="blog-details" v-html="news.description_en">
                                 </div>
                                 </div>
                             </div>
@@ -79,17 +79,11 @@ export default {
         return {
             news: {},
             lang: '',
+            currentLang: this.$i18n.locale,
         }
     },
   async created () {
-    this.bla = this.$route.params.news;
-	    // let singleNews = this.$route.params.news
-        // if(singleNews){
-        //     this.news = singleNews
-        // }
-        // else {
-        //     this.$router.push('blog-one');
-        // }
+    this.news = this.singleBlog;
 	},
     computed: {
         singleBlog(){
@@ -97,7 +91,6 @@ export default {
         },
     },
     mounted() {
-
         console.log('orderNews: ', this.news);
     }
 }
